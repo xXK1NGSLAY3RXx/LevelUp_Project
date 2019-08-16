@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public static PlayerMove Player_Move;
-    private Collider2D player_collider;
+    private CircleCollider2D player_collider;
+    private float radius;
 
 
 
@@ -16,19 +17,22 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private float Base_Speed;
 
-    
-    private Direction face_direction ;
+    private Direction input_direction;
+    private Direction face_direction;
 
-    public Direction FaceDirection
+    public Direction InputDirection
     {
         get
         {
-            return face_direction;
+            return input_direction;
         }
 
         set
         {
-            face_direction = value;
+            if (face_direction == Direction.empty)
+                face_direction = value;
+            else if(face_direction != value)
+                input_direction = value;
         }
     }
 
@@ -43,25 +47,28 @@ public class PlayerMove : MonoBehaviour
         Player_Move = this;
         Player_Position = transform.position;
         RB = GetComponent<Rigidbody2D>();
-        
+        radius = player_collider.radius * transform.localScale.x;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-        
+        if (InputDirection != Direction.empty)
+        {
+            if (!CheckCollision(InputDirection))
+            {
+                face_direction = InputDirection;
+                InputDirection = Direction.empty;
+            }
+        }
+
         if (face_direction != Direction.empty)
         {
-            if (CheckCollision(FaceDirection))
-             Stop();
-
-
+            CalculateMovement();
         }
-        Move(FaceDirection);
 
     }
-   
+
 
     public void Move(Direction dir)
     {
@@ -71,34 +78,41 @@ public class PlayerMove : MonoBehaviour
 
 
     }
-    
+
 
     public bool CheckCollision(Direction dir)
     {
-        Vector2 trans = transform.position;
-        //LayerMask mask = LayerMask.GetMask("Block");
-        //var hit = new RaycastHit2D[10000];
-        //ContactFilter2D filter = new ContactFilter2D() ;
+
+
         Vector2 dir_vector = TookKit.DirectionToVector(dir);
-        //int hit_num = player_collider.Cast(dir_vector,filter,hit,0.1f);
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.47f, dir_vector,10,LayerMask.GetMask("Block"));
-        
+
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, radius, dir_vector, 0.1f, LayerMask.GetMask("Block"));
+
+        Debug.DrawRay(transform.position, dir_vector);
         if (hit.collider != null)
         {
-            if (Vector2.Distance(transform.position, hit.point) < 0.55)
-         
-            {
-                Debug.Log("hit");
-
-                return true;
-            }
-
-
-
-
-
+            return true;
         }
         return false;
+    }
+
+    private void CalculateMovement()
+    {
+
+        Vector2 face_vector = TookKit.DirectionToVector(face_direction);
+        float distance = Speed * Time.deltaTime;
+
+
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, radius, face_vector, distance, LayerMask.GetMask("Block"));
+        if (hit.collider != null)
+        {
+            distance *= hit.fraction;
+            distance -= 0.01f;
+            Debug.Log(hit.collider);
+            Stop();
+        }
+
+        transform.position += (Vector3)face_vector * distance;
     }
 
     public void Stop()

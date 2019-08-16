@@ -16,20 +16,20 @@ public class PlayerControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            PlayerMove.Player_Move.FaceDirection = Direction.left;
+            PlayerMove.Player_Move.InputDirection = Direction.left;
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            PlayerMove.Player_Move.FaceDirection = Direction.right;
+            PlayerMove.Player_Move.InputDirection = Direction.right;
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
-            PlayerMove.Player_Move.FaceDirection = Direction.up;
+            PlayerMove.Player_Move.InputDirection = Direction.up;
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            PlayerMove.Player_Move.FaceDirection = Direction.down;
+            PlayerMove.Player_Move.InputDirection = Direction.down;
         }
 
 

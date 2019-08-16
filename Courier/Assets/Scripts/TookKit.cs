@@ -35,3 +35,7 @@ public enum Direction
 {
    empty, left, down, up, right
 }
+public enum collectables
+{
+    coin,powerup
+}
