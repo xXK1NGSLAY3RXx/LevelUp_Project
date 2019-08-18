@@ -39,3 +39,11 @@ public enum collectables
 {
     coin,powerup
 }
+
+public enum TileID
+{
+    block = 1,coin = 2
+    
+
+
+} 

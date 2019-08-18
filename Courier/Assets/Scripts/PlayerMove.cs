@@ -8,7 +8,16 @@ public class PlayerMove : MonoBehaviour
     private CircleCollider2D player_collider;
     private float radius;
 
+    private GameObject[,] currenttile;
 
+    private int f_X = 0;
+    private int f_Y = 0;
+    private int i_X = 0;
+    private int i_Y = 0;
+    
+
+    private int playerpos_x;
+    private int playerpos_y;
 
     private Rigidbody2D RB;
 
@@ -29,23 +38,22 @@ public class PlayerMove : MonoBehaviour
 
         set
         {
-            if (face_direction == Direction.empty)
-                face_direction = value;
-            else if(face_direction != value)
+            
                 input_direction = value;
         }
     }
 
-    private Vector2 Player_Position;
+   
 
     // Start is called before the first frame update
     void Start()
     {
+        
         player_collider = GetComponent<CircleCollider2D>();
         face_direction = Direction.empty;
         Speed = Base_Speed;
         Player_Move = this;
-        Player_Position = transform.position;
+      
         RB = GetComponent<Rigidbody2D>();
         radius = player_collider.radius * transform.localScale.x;
     }
@@ -53,19 +61,82 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DirectionHandle();
+        currenttile = MapManager.instance.tile;
+
+        if (f_X == 1)
+        {
+           
+            playerpos_x = Mathf.RoundToInt(transform.position.x - 0.4f);
+        }
+        else if (f_X == -1)
+        {
+            playerpos_x = Mathf.RoundToInt(transform.position.x + 0.4f);
+        }
+        else if (f_X == 0)
+        {
+            playerpos_x = Mathf.RoundToInt(transform.position.x);
+        }
+
+        if (f_Y == 1)
+        {
+            playerpos_y = Mathf.RoundToInt(transform.position.y - 0.4f);
+        }
+        else if (f_Y == -1)
+        {
+            playerpos_y = Mathf.RoundToInt(transform.position.y + 0.4f);
+        }
+        else if (f_Y == 0)
+        {
+            playerpos_y = Mathf.RoundToInt(transform.position.y);
+        }
+        
+
+
+
         if (InputDirection != Direction.empty)
         {
-            if (!CheckCollision(InputDirection))
+            if (currenttile[playerpos_x, playerpos_y] == null)
             {
-                face_direction = InputDirection;
-                InputDirection = Direction.empty;
+
+                if (currenttile[playerpos_x + i_X, playerpos_y + i_Y] == null)
+                {
+                    
+                    face_direction = InputDirection;
+                    
+                }
+
             }
         }
 
-        if (face_direction != Direction.empty)
+
+        if (currenttile[playerpos_x, playerpos_y] == null)
         {
-            CalculateMovement();
+            if (currenttile[playerpos_x + f_X , playerpos_y + f_Y ] != null)
+            {
+                Stop();
+            }
+            else { Move(face_direction); }
+
         }
+        Debug.Log("inputdirection =" + InputDirection);
+        Debug.Log("facedirection =" + face_direction);
+
+
+
+        //if (InputDirection != Direction.empty)
+        //{
+        //    if (!CheckCollision(InputDirection))
+        //    {
+        //        face_direction = InputDirection;
+        //        InputDirection = Direction.empty;
+        //    }
+        //}
+
+        //if (face_direction != Direction.empty)
+        //{
+        //    CalculateMovement();
+        //}
 
     }
 
@@ -73,50 +144,97 @@ public class PlayerMove : MonoBehaviour
     public void Move(Direction dir)
     {
         transform.position = (Vector2)transform.position + TookKit.DirectionToVector(dir) * Speed * Time.deltaTime;
-        //transform.position = Player_Position;
+        
 
 
 
     }
 
-
-    public bool CheckCollision(Direction dir)
+    public void DirectionHandle()
     {
-
-
-        Vector2 dir_vector = TookKit.DirectionToVector(dir);
-
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, radius, dir_vector, 0.1f, LayerMask.GetMask("Block"));
-
-        Debug.DrawRay(transform.position, dir_vector);
-        if (hit.collider != null)
+        if (face_direction == Direction.left)
         {
-            return true;
+            f_X = -1; f_Y = 0;
         }
-        return false;
-    }
-
-    private void CalculateMovement()
-    {
-
-        Vector2 face_vector = TookKit.DirectionToVector(face_direction);
-        float distance = Speed * Time.deltaTime;
-
-
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, radius, face_vector, distance, LayerMask.GetMask("Block"));
-        if (hit.collider != null)
+        else if (face_direction == Direction.up)
         {
-            distance *= hit.fraction;
-            distance -= 0.01f;
-            Debug.Log(hit.collider);
-            Stop();
+            f_X = 0; f_Y = 1;
+        }
+        else if (face_direction == Direction.right)
+        {
+            f_X = 1; f_Y = 0;
+        }
+        else if (face_direction == Direction.down)
+        {
+            f_X = 0; f_Y = -1;
+        }
+        else
+        {
+            f_X = 0; f_Y = 0;
         }
 
-        transform.position += (Vector3)face_vector * distance;
+        if (InputDirection == Direction.left)
+        {
+            i_X = -1; i_Y = 0;
+        }
+        else if (InputDirection == Direction.up)
+        {
+            i_X = 0; i_Y = 1;
+        }
+        else if (InputDirection == Direction.right)
+        {
+            i_X = 1; i_Y = 0;
+        }
+        else if (InputDirection == Direction.down)
+        {
+            i_X = 0; i_Y = -1;
+        }
+        else if (InputDirection == Direction.empty)
+        {
+            i_X = 0;
+            i_Y = 0;
+        }
+        
     }
+
+    //public bool CheckCollision(Direction dir)
+    //{
+
+
+    //    Vector2 dir_vector = TookKit.DirectionToVector(dir);
+
+    //    RaycastHit2D hit = Physics2D.CircleCast(transform.position, radius, dir_vector, 0.1f, LayerMask.GetMask("Block"));
+
+    //    Debug.DrawRay(transform.position, dir_vector);
+    //    if (hit.collider != null)
+    //    {
+    //        return true;
+    //    }
+    //    return false;
+    //}
+
+    //private void CalculateMovement()
+    //{
+
+    //    Vector2 face_vector = TookKit.DirectionToVector(face_direction);
+    //    float distance = Speed * Time.deltaTime;
+
+
+    //    RaycastHit2D hit = Physics2D.CircleCast(transform.position, radius, face_vector, distance, LayerMask.GetMask("Block"));
+    //    if (hit.collider != null)
+    //    {
+    //        distance *= hit.fraction;
+    //        distance -= 0.01f;
+    //        Debug.Log(hit.collider);
+    //        Stop();
+    //    }
+
+    //    transform.position += (Vector3)face_vector * distance;
+    //}
 
     public void Stop()
     {
+        
         face_direction = Direction.empty;
     }
 }
