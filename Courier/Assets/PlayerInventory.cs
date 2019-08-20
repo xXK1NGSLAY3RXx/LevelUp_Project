@@ -6,6 +6,19 @@ public class PlayerInventory : MonoBehaviour
 {
     public static PlayerInventory instance;
     private int collected_coins;
+    //use this in other scripts PlayerInventory.instance.collectedCoins
+    public int CollectedCoins
+    {
+        get
+        {
+            return collected_coins;
+        }
+
+        set
+        {
+            collected_coins = value;
+        }
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -23,7 +36,7 @@ public class PlayerInventory : MonoBehaviour
     {
         if (item == collectables.coin)
         {
-            collected_coins += 1;
+            CollectedCoins += 1;
         }
     }
 

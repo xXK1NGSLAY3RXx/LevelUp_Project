@@ -19,12 +19,12 @@ public class PlayerMove : MonoBehaviour
     private int playerpos_x;
     private int playerpos_y;
 
-    private Rigidbody2D RB;
+   
 
-    [SerializeField]
+    
+  
     private float Speed;
-    [SerializeField]
-    private float Base_Speed;
+   
 
     private Direction input_direction;
     private Direction face_direction;
@@ -48,14 +48,11 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        player_collider = GetComponent<CircleCollider2D>();
-        face_direction = Direction.empty;
-        Speed = Base_Speed;
         Player_Move = this;
-      
-        RB = GetComponent<Rigidbody2D>();
-        radius = player_collider.radius * transform.localScale.x;
+        Speed = PlayerStats.instance.CurrentSpeed;
+        face_direction = Direction.empty;
+       
+        
     }
 
     // Update is called once per frame
@@ -85,6 +82,7 @@ public class PlayerMove : MonoBehaviour
         else if (f_Y == -1)
         {
             playerpos_y = Mathf.RoundToInt(transform.position.y + 0.4f);
+
         }
         else if (f_Y == 0)
         {
