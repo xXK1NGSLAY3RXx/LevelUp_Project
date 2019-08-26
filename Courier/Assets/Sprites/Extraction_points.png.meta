@@ -1,0 +1,821 @@
+fileFormatVersion: 2
+guid: 69ee4327bf531a5479ea3011577ea038
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7946567443916153388
+    second: Extraction_points_0
+  - first:
+      213: -4201799359767154821
+    second: Extraction_points_1
+  - first:
+      213: 6956549286957691204
+    second: Extraction_points_2
+  - first:
+      213: 2094823672882271748
+    second: Extraction_points_3
+  - first:
+      213: -94727816903650467
+    second: Extraction_points_4
+  - first:
+      213: -8477766860740867556
+    second: Extraction_points_5
+  - first:
+      213: 7856382601418704857
+    second: Extraction_points_6
+  - first:
+      213: 2705594331520386651
+    second: Extraction_points_7
+  - first:
+      213: 1953657300462124821
+    second: Extraction_points_8
+  - first:
+      213: -1687840136284613487
+    second: Extraction_points_9
+  - first:
+      213: -3430039104137051754
+    second: Extraction_points_10
+  - first:
+      213: -5871873225155140348
+    second: Extraction_points_11
+  - first:
+      213: 1835067220466821495
+    second: Extraction_points_12
+  - first:
+      213: -3470918625514928539
+    second: Extraction_points_13
+  - first:
+      213: 4031382283249418261
+    second: Extraction_points_14
+  - first:
+      213: -5106908463400510855
+    second: Extraction_points_15
+  - first:
+      213: -1197700744520669007
+    second: Extraction_points_16
+  - first:
+      213: 2162820771690281020
+    second: Extraction_points_17
+  - first:
+      213: -7012444514923594300
+    second: Extraction_points_18
+  - first:
+      213: -908993016454023081
+    second: Extraction_points_19
+  - first:
+      213: -1001341665633616112
+    second: Extraction_points_20
+  - first:
+      213: -3359839652885655812
+    second: Extraction_points_21
+  - first:
+      213: -3796579259897147357
+    second: Extraction_points_22
+  - first:
+      213: -1483003352779797356
+    second: Extraction_points_23
+  - first:
+      213: 5839338504250153103
+    second: Extraction_points_24
+  - first:
+      213: -1141629228194949424
+    second: Extraction_points_25
+  - first:
+      213: 8053737083249229427
+    second: Extraction_points_26
+  - first:
+      213: 3830674706596854371
+    second: Extraction_points_27
+  - first:
+      213: -5102156548484334693
+    second: Extraction_points_28
+  - first:
+      213: 5641530726104759239
+    second: Extraction_points_29
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Extraction_points_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 619bfd2ddcb7f8f4984b9f6f094ad666
+      internalID: -7946567443916153388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 130
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 334b3f6f9f50a5642a350b9c1b33c622
+      internalID: -4201799359767154821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_2
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 130
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c53b913bd3c34104d8b1a688603638bf
+      internalID: 6956549286957691204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_3
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 130
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba17f7baa8f72a438b1524a08cbec4c
+      internalID: 2094823672882271748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_4
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 241
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04e3adbe8bbd3a42816902c3c88b4b8
+      internalID: -94727816903650467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_5
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 241
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54ffe7c5b1bfb246a04ba65a5e22c9f
+      internalID: -8477766860740867556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_6
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 241
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c68f451629e81394fbdcd25bad6339ac
+      internalID: 7856382601418704857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_7
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 241
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e765c1b30355ef498ea1d5d621da11b
+      internalID: 2705594331520386651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_8
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 241
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811050ac5da00c742b40cd0d06b022f1
+      internalID: 1953657300462124821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_9
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 233
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f7b841ae1dea04c99a41f6eb1d30b3
+      internalID: -1687840136284613487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_10
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 231
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b83fdc5423071a41bf7d3b0302f36ed
+      internalID: -3430039104137051754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_11
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 231
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2e4e80331aea6e4f908b7b51c15b16b
+      internalID: -5871873225155140348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_12
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 231
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67928c8241583b9448a52daa970f50e7
+      internalID: 1835067220466821495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_13
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 233
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c8e399cd2971c428596983d3454fa0
+      internalID: -3470918625514928539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_14
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 216
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e43c9e14d28dbdd48874d2bf96ddbf39
+      internalID: 4031382283249418261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_15
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 216
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7764ea20327ef544893a2aab92656572
+      internalID: -5106908463400510855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_16
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 216
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ebdc6b2bf4b4d4b8ea98f45c2d87c3
+      internalID: -1197700744520669007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_17
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 216
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efe286a1064c4dc41bc60bb2b69f79b1
+      internalID: 2162820771690281020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_18
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 216
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ecf26e2837ed940924731ff81696bb
+      internalID: -7012444514923594300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_19
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 216
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5146ffa1f52c93442afc386b6855d2a1
+      internalID: -908993016454023081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_20
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 216
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ff7bb5034e5664b92e5ab4df385e35
+      internalID: -1001341665633616112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_21
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 216
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59005c77999b42d4fb3c219d67426b78
+      internalID: -3359839652885655812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_22
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 180
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd4ffe34ed280843bb96ee005702bc1
+      internalID: -3796579259897147357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_23
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 181
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8bcd0a62d2ffc84cab4c7367999da1d
+      internalID: -1483003352779797356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_24
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 181
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f79e5a6d573ebb42a6f3e7b4b0ab960
+      internalID: 5839338504250153103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e525d4cb11b7e4183ea15bac2d0e5c
+      internalID: -1141629228194949424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_26
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2fdf8970c0d0e4e95ac88c97f664d8
+      internalID: 8053737083249229427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_27
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33a567cc8c8e2c94a907c6c431a0ef96
+      internalID: 3830674706596854371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_28
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1984f5420b73b9c47b7d66b0a8394ef6
+      internalID: -5102156548484334693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Extraction_points_29
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ef2bd49f1807847af14945aa168443
+      internalID: 5641530726104759239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0cf9ef8db02719f4d96f25113a17cc22
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
