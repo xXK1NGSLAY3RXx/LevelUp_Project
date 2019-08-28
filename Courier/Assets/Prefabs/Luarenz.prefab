@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 3016036094248089335}
   - component: {fileID: 3016036094248089334}
   - component: {fileID: 3016036094248089321}
-  - component: {fileID: 3016036094248089330}
+  - component: {fileID: -473116509322792088}
+  - component: {fileID: 4069877943817852989}
   m_Layer: 9
   m_Name: Luarenz
   m_TagString: Player
@@ -123,9 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32dbad8dabecd343acce9312f643e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0
-  Base_Speed: 5
---- !u!114 &3016036094248089330
+--- !u!114 &-473116509322792088
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,6 +133,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 3016036094248089320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59d66e4da5aa035439b47437ba5a51e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c5f339cb36a046439b439726cca7192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4069877943817852989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3016036094248089320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9d22d68d4b90479c5080bda8f841d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 3
+  MaxSpeed: 5

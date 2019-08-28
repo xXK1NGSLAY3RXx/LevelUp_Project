@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerStats : CharacterStats
 {
     public static PlayerStats instance;
+
     private int earned_points;
     public int EarnedPoints
     {
@@ -25,16 +26,12 @@ public class PlayerStats : CharacterStats
     void Start()
     {
         instance = this;
-        
-
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        
+        Debug.Log(CurrentSpeed);
     }
         
 
