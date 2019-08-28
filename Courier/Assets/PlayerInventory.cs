@@ -40,4 +40,12 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    public void coinloss(collectables item)
+    {
+        if (item == collectables.coin)
+        {
+            CollectedCoins -= 1;
+            EnemyInventory.instance.collecting();
+        }
+    }
 }
