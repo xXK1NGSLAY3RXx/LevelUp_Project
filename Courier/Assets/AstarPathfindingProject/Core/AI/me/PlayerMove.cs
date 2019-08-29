@@ -51,12 +51,11 @@ public class PlayerMove : MonoBehaviour
     {
         Player_Move = this;
         stats = GetComponent<PlayerStats>();
-
+       
         Speed = stats.CurrentSpeed;
         face_direction = Direction.empty;
-
-
-
+       
+        
     }
 
     // Update is called once per frame
@@ -98,10 +97,10 @@ public class PlayerMove : MonoBehaviour
 
         if (InputDirection != Direction.empty)
         {
-            if (currenttile[playerpos_x, playerpos_y] == null)
+            if (currenttile[playerpos_x, playerpos_y].CompareTag("Blank"))
             {
 
-                if (currenttile[playerpos_x + i_X, playerpos_y + i_Y] == null)
+                if (currenttile[playerpos_x + i_X, playerpos_y + i_Y].CompareTag("Blank"))
                 {
                     
                     face_direction = InputDirection;
@@ -112,18 +111,15 @@ public class PlayerMove : MonoBehaviour
         }
 
 
-        if (currenttile[playerpos_x, playerpos_y] == null)
+        if (currenttile[playerpos_x, playerpos_y].CompareTag("Blank"))
         {
-            if (currenttile[playerpos_x + f_X , playerpos_y + f_Y ] != null)
+            if (currenttile[playerpos_x + f_X , playerpos_y + f_Y ].CompareTag("Block"))
             {
                 Stop();
             }
             else { Move(face_direction); }
 
         }
-        Debug.Log("inputdirection =" + InputDirection);
-        Debug.Log("facedirection =" + face_direction);
-
 
 
         //if (InputDirection != Direction.empty)
@@ -146,10 +142,6 @@ public class PlayerMove : MonoBehaviour
     public void Move(Direction dir)
     {
         transform.position = (Vector2)transform.position + TookKit.DirectionToVector(dir) * Speed * Time.deltaTime;
-        
-
-
-
     }
 
     public void DirectionHandle()

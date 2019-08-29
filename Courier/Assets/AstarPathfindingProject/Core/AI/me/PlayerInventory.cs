@@ -19,7 +19,7 @@ public class PlayerInventory : MonoBehaviour
             collected_coins = value;
         }
     }
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +29,8 @@ public class PlayerInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Debug.Log(collected_coins);
-        
+        // Debug.Log(collected_coins);
+
     }
     public void collecting(collectables item)
     {
@@ -40,12 +40,8 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public void coinloss(collectables item)
+    public void coinloss(int Value)
     {
-        if (item == collectables.coin)
-        {
-            CollectedCoins -= 1;
-            EnemyInventory.instance.collecting();
-        }
+        CollectedCoins -= Value;
     }
 }

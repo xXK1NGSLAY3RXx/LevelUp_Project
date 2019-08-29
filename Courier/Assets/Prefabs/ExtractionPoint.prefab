@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 5987456598241218525}
   - component: {fileID: 2470375840970635110}
   - component: {fileID: 4805082617748036153}
-  - component: {fileID: 8795768241773522164}
+  - component: {fileID: 3232060767444361155}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -149,7 +149,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &8795768241773522164
+--- !u!114 &3232060767444361155
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1069783904442070067}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba1f2c0ee12c78d43a5dd64a2fa8ba3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 62657ab104e0fa44fa12e2072c75ad44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 245770164620964558, guid: 74e6464893d1c0e46811fcfcd0f24582, type: 3}
@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 2951307942336844869}
   - component: {fileID: 3348333815721003724}
   - component: {fileID: 8843126910989799164}
+  - component: {fileID: 3003312415881928481}
   m_Layer: 0
   m_Name: ExtractionPoint
   m_TagString: Untagged
@@ -309,3 +310,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!58 &3003312415881928481
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3003312415881928474}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.48, y: 2.23}
+  serializedVersion: 2
+  m_Radius: 3.69

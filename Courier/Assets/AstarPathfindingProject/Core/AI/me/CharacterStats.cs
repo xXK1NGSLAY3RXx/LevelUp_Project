@@ -9,9 +9,8 @@ public class CharacterStats : MonoBehaviour
     public float MaxSpeed = 5;
     public float CurrentSpeed { get; private set; }
 
-    public int playerpos_x;
-    public int playerpos_y;
-    public GameObject[,] current_tile;
+
+
 
 
     private void Awake()
@@ -23,9 +22,8 @@ public class CharacterStats : MonoBehaviour
 
     private void Update()
     {
-        playerpos_x = Mathf.RoundToInt(transform.position.x);
-        playerpos_y = Mathf.RoundToInt(transform.position.y);
-
+        
+      
 
 
     }

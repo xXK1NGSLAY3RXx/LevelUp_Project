@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class ExtractionPoint : MonoBehaviour
 {
+    public static ExtractionPoint instance;
     public int max_value;
     private int current_value;
+    public int CurrentValue
+    {
+        get
+        {
+            return current_value;
+        }
+
+        set
+        {
+            current_value = value;
+        }
+
+    }
     public int deposit_limit_max;
     public int deposit_limit_min;
     private int collectable_points;
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
@@ -39,18 +53,13 @@ public class ExtractionPoint : MonoBehaviour
 
     public void deposit()
     {   collectable_points = max_value - current_value;
-        if (current_value <= max_value && max_value >= deposit_limit_max)
+        if (current_value < max_value && max_value >= deposit_limit_max)
         {
         
             if (PlayerInventory.instance.CollectedCoins > deposit_limit_min)
             {
-                if (PlayerInventory.instance.CollectedCoins >= deposit_limit_max)
-                {
-                    current_value += deposit_limit_max;
-                    PlayerInventory.instance.CollectedCoins -= deposit_limit_max;
-
-                }
-                else if (collectable_points > 0 )
+              
+                if (collectable_points > 0 )
                 {
                     for (int i = 0; i  < collectable_points; i ++)
                     {
