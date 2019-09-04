@@ -18,12 +18,10 @@ namespace Pathfinding
     public class AIDestinationSetter : VersionedMonoBehaviour
     {
         /// <summary>The object that the AI should move to</summary>
-        Time time;
-        float levelTimerS = 0.0f;
-        float levelTS = 5.0f;
-        float levelTimerC = 0.0f;
-        float levelTC = 10.0f;
 
+        public float scatterTimer;    
+        public float startChaseTimer;
+        public float chaseTimer;
 
         public GameObject player;
         public Transform target;
@@ -38,14 +36,10 @@ namespace Pathfinding
             agent = GetComponent<IAstarAI>();
         }
 
-        //void Update()
-       // {
-            
-        //}
 
         void MoveToWaypoint()
         {
-            
+
             if (targets.Length == 0) return;
 
             bool search = false;
@@ -70,9 +64,8 @@ namespace Pathfinding
             if (search) agent.SearchPath();
         }
 
-       void MoveToPlayer()
+        void MoveToPlayer()
         {
-            if (targets.Length == 0) return;
 
             bool search = false;
 
@@ -80,11 +73,8 @@ namespace Pathfinding
             // We must check for 'pathPending' because otherwise we might
             // detect that the agent has reached the *previous* target
             // because the new path has not been calculated yet.
-            if (agent.reachedEndOfPath && !agent.pathPending)
-            {
-                agent.destination = target.position;
-                search = true;
-            }
+            agent.destination = target.position;
+            search = true;
 
             // Wrap around to the start of the targets array if we have reached the end of it
 
@@ -97,16 +87,16 @@ namespace Pathfinding
         }
 
 
-        
+
 
         void Start()
         {
-            InvokeRepeating("SwitchToScatterState", 0.0f, 4.99f);
-            InvokeRepeating("SwitchToChaseState", 5.0f, 10.0f);
+            InvokeRepeating("SwitchToScatterState", 0.0f, scatterTimer);
+            InvokeRepeating("SwitchToChaseState", startChaseTimer, chaseTimer);
 
             // _rigidbody2D = GetComponent<Rigidbody2D>();
-            _state = State.scatter;
-            
+            //_state = State.scatter;
+
         }
 
         public enum State
@@ -119,23 +109,23 @@ namespace Pathfinding
 
         void SwitchToChaseState()
         {
-           // LeaveScatter();
+            // LeaveScatter();
             _state = State.chase;
-           // EnterChase();
+            // EnterChase();
         }
 
         void SwitchToScatterState()
         {
-           // LeaveChase();
+            // LeaveChase();
             _state = State.scatter;
-           // EnterScatter();
+            // EnterScatter();
         }
 
-     
+
         void FixedUpdate()
         {
-            
-            
+
+
             switch (_state)
             {
                 case State.scatter:
@@ -148,44 +138,52 @@ namespace Pathfinding
         }
 
         // state - scatter: //
-       // void EnterScatter()
-       // {
+        // void EnterScatter()
+        // {
 
 
-       // }
+        // }
 
         void UpdateScatter()
         {
 
-                    
+
             MoveToWaypoint();
         }
 
-       // void LeaveScatter()
-       // {
+        // void LeaveScatter()
+        // {
 
-      //  }
+        //  }
 
         // state - chase: //
 
-     //   void EnterChase()
-      //  {
+        //   void EnterChase()
+        //  {
 
-      //  }
+        //  }
 
         void UpdateChase()
         {
-           
+
             MoveToPlayer();
         }
 
-       // void LeaveChase()
-       // {
+        // void LeaveChase()
+        // {
 
-      // }
+        // }
 
-  
 
+        void OnTriggerEnter2D(Collider2D co)
+        {
+            if (co.name == "luarenz")
+            {
+                // PlayerInventory.instance.coinloss(collectables.coin);
+                Debug.Log("hit");
+                // Destroy(co.gameObject);
+            }
+        }
 
 
     }
