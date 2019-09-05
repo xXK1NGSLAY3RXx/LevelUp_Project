@@ -31,7 +31,7 @@ namespace Pathfinding
 
         IAstarAI agent;
 
-        void Awake()
+        void  Awake()
         {
             agent = GetComponent<IAstarAI>();
         }

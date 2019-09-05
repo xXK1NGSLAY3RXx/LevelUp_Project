@@ -18,17 +18,56 @@ public class PlayerMove : MonoBehaviour
     
 
     private int playerpos_x;
+    public int PlayerPosX
+    {
+        get
+        {
+            return playerpos_x;
+        }
+
+        set
+        {
+
+            playerpos_x = value;
+        }
+    }
     private int playerpos_y;
+    public int PlayerPosY
+    {
+        get
+        {
+            return playerpos_y;
+        }
 
-   
+        set
+        {
 
-    
-  
+            playerpos_y = value;
+        }
+    }
+
+
+
+
+
     private float Speed;
    
 
     private Direction input_direction;
     private Direction face_direction;
+    public Direction FaceDirection
+    {
+        get
+        {
+            return face_direction;
+        }
+
+        set
+        {
+
+            face_direction = value;
+        }
+    }
 
     public Direction InputDirection
     {
@@ -51,8 +90,8 @@ public class PlayerMove : MonoBehaviour
     {
         Player_Move = this;
         stats = GetComponent<PlayerStats>();
-       
-        Speed = stats.CurrentSpeed;
+
+        updatespeed();
         face_direction = Direction.empty;
        
         
@@ -104,6 +143,7 @@ public class PlayerMove : MonoBehaviour
                 {
                     
                     face_direction = InputDirection;
+                    PlayerGraphics.instance.updatesprite();
                     
                 }
 
@@ -189,6 +229,11 @@ public class PlayerMove : MonoBehaviour
             i_Y = 0;
         }
         
+    }
+
+    public void updatespeed()
+    {
+        Speed = stats.CurrentSpeed;
     }
 
     //public bool CheckCollision(Direction dir)

@@ -5,6 +5,9 @@ using UnityEngine;
 public class ExtractionPoint : MonoBehaviour
 {
     public static ExtractionPoint instance;
+    public float Deposit_interval;
+    public int extraction_rate_miltiplier;
+    public float extraction_rate;
     public int max_value;
     private int current_value;
     public int CurrentValue
@@ -20,6 +23,9 @@ public class ExtractionPoint : MonoBehaviour
         }
 
     }
+
+    private float period;
+    private bool CanExtract;
     public int deposit_limit_max;
     public int deposit_limit_min;
     private int collectable_points;
@@ -32,7 +38,26 @@ public class ExtractionPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
+        if (CanExtract == true )
+        {
+            period += Time.deltaTime;
+
+            if (period > extraction_rate)
+            {
+                deposit();
+                period = 0;
+
+            }
+            
+            
+        }
+        
+      
         Debug.Log("Extraction Site value =" + current_value);
+       
         
     }
 
@@ -42,10 +67,25 @@ public class ExtractionPoint : MonoBehaviour
 
             
         {
-            
-                deposit();
+
+            CanExtract = true;
 
             
+
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+
+
+        {
+
+            CanExtract = false;
+
+
 
 
         }
@@ -61,17 +101,16 @@ public class ExtractionPoint : MonoBehaviour
               
                 if (collectable_points > 0 )
                 {
-                    for (int i = 0; i  < collectable_points; i ++)
-                    {
+                    
                         if(PlayerInventory.instance.CollectedCoins > 0)
-                        { 
-                        PlayerInventory.instance.CollectedCoins -= 1;
-                        current_value += 1;
+                        {
+                        PlayerInventory.instance.CollectedCoins -= 1 * extraction_rate_miltiplier;
+                        current_value += 1 * extraction_rate_miltiplier;
 
-
+                            
                         }
 
-                    }
+                    
 
 
                 }

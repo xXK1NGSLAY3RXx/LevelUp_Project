@@ -31,6 +31,10 @@ public class PlayerControl : MonoBehaviour
         {
             PlayerMove.Player_Move.InputDirection = Direction.down;
         }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            PlayerInventory.instance.UsingPowerup();
+        }
 
 
 
