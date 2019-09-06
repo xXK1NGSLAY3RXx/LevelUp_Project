@@ -810,7 +810,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yourButton: {fileID: 1921875156}
+<<<<<<< refs/remotes/origin/mh_temp
   sceneNumber: 1
+=======
+  sceneNumber: 0
+>>>>>>> menu hub
 --- !u!1 &1963618301
 GameObject:
   m_ObjectHideFlags: 0
