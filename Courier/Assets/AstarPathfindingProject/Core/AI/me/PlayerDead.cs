@@ -18,6 +18,7 @@ public class PlayerDead : MonoBehaviour
         if (other.CompareTag("KillerEnemy"))
         {
             P.takedamage(1);
+
             //Destroy(gameObject);
         }
     }

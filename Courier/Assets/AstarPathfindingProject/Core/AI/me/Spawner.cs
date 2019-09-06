@@ -25,7 +25,8 @@ public class Spawner : MonoBehaviour
     void SpawnE()
     {
         Instantiate(enemy, transform.position, Quaternion.identity);
-        
+        Destroy(gameObject);
+
     }
     
     void S()

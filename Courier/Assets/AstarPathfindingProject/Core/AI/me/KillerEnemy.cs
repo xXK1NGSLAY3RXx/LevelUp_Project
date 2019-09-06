@@ -8,17 +8,17 @@ namespace Pathfinding
     public class KillerEnemy : MonoBehaviour
     {
 
-        // public float scatterTimer;
-        // public float startChaseTimer;
-        //  public float chaseTimer;
+         public float scatterTimer;
+         public float startChaseTimer;
+         public float chaseTimer;
 
         public GameObject player;
         public GameObject P;
         public Transform target;
 
         // public Transform playerP;
-        //  public Transform[] targets;
-        //  int index;
+          public Transform[] targets;
+         int index;
 
         IAstarAI agent;
 
@@ -33,7 +33,7 @@ namespace Pathfinding
         }
 
 
-        /* void MoveToWaypoint()
+         void MoveToWaypoint()
          {
 
              if (targets.Length == 0) return;
@@ -52,7 +52,7 @@ namespace Pathfinding
 
              if (search) agent.SearchPath();
          }
- */
+
         void MoveToPlayer()
         {
 
@@ -76,11 +76,11 @@ namespace Pathfinding
         }
         void Start()
         {
-            //InvokeRepeating("SwitchToScatterState", 0.0f, scatterTimer);
-            //InvokeRepeating("SwitchToChaseState", startChaseTimer, chaseTimer);
+            InvokeRepeating("SwitchToScatterState", 0.0f, scatterTimer);
+            InvokeRepeating("SwitchToChaseState", startChaseTimer, chaseTimer);
 
             // _rigidbody2D = GetComponent<Rigidbody2D>();
-            _state = State.chase;
+            _state = State.scatter;
 
         }
 
@@ -130,7 +130,7 @@ namespace Pathfinding
         void UpdateScatter()
         {
 
-            //MoveToWaypoint();
+            MoveToWaypoint();
         }
 
         // void LeaveScatter()
@@ -157,14 +157,14 @@ namespace Pathfinding
         // }
 
 
-       /* void OnTriggerEnter2D(Collider2D other)
+        void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
             {
-                Destroy(gameObject);
+                _state = State.scatter;
             }
         }
-*/
+
 
     }
 }
