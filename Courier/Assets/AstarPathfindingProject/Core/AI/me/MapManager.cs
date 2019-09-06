@@ -56,7 +56,7 @@ public class MapManager : MonoBehaviour
     void Update()
     {
         //Debug.Log(tile[PlayerMove.Player_Move.playerpos_x, PlayerMove.Player_Move.playerpos_y]);
-        Debug.Log(tile[1, 1]);
+        //    Debug.Log(tile[1, 1]);
     }
 
     public void tilesaving()

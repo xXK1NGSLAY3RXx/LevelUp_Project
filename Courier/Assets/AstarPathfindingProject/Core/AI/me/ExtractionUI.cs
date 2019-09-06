@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class ExtractionUI : MonoBehaviour
 {
+    public static ExtractionUI instance;
     public GameObject UI;
     protected Text numbers;
+    protected Scrollbar bar;
     private int currentValue;
     private int MaxValue;
     private LineRenderer line;
 
+    private float active_time;
     private int segments = 50;
     private float circle_Xradius ;
     private float circle_Yradius ;
@@ -18,25 +21,32 @@ public class ExtractionUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        circle_Xradius = GetComponent<CircleCollider2D>().radius;
-        circle_Yradius = GetComponent<CircleCollider2D>().radius;
+        instance = this;
+        circle_Xradius = GetComponentInParent<CircleCollider2D>().radius;
+        circle_Yradius = GetComponentInParent<CircleCollider2D>().radius;
+        //circle_Xradius = GetComponent<CircleCollider2D>().radius;
+        //circle_Yradius = GetComponent<CircleCollider2D>().radius;
 
+        //bar = Instantiate(UI.GetComponentInChildren<Scrollbar>(), FindObjectOfType<Canvas>().transform);
         numbers = Instantiate(UI.GetComponentInChildren<Text>(), FindObjectOfType<Canvas>().transform).GetComponent<Text>();
         line = GetComponent<LineRenderer>();
         line.positionCount = (segments + 1);
         line.useWorldSpace = false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        circle_Xradius = GetComponent<CircleCollider2D>().radius;
-        circle_Yradius = GetComponent<CircleCollider2D>().radius;
+        
         CreatePoints();
 
         currentValue = GetComponentInParent<ExtractionPoint>().CurrentValue;
         MaxValue = GetComponentInParent<ExtractionPoint>().max_value;
+        active_time = GetComponentInParent<ExtractionPoint>().active_time;
 
+        //bar.size = active_time / 10;
+        //bar.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 0.5f, 0));
         numbers.text = currentValue.ToString() + " / " + MaxValue.ToString();
         numbers.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 0.5f, 0));
     }
@@ -61,23 +71,18 @@ public class ExtractionUI : MonoBehaviour
         }
     }
 
-
-
-    private void OnTriggerStay2D(Collider2D other)
+    public void disabletxt()
     {
-        if (other.CompareTag("Player"))
-        {
-            numbers.enabled = true;
-        }
+        numbers.enabled = false;
+    }
+
+    public void disablebar()
+    {
        
+        bar.enabled = false;
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            numbers.enabled = false;
-        }
-    }
+
+   
 
 }

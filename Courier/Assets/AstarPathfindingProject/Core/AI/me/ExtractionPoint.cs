@@ -5,7 +5,15 @@ using UnityEngine;
 public class ExtractionPoint : MonoBehaviour
 {
     public static ExtractionPoint instance;
+
+    public float active_time;
+    
+
+
+    public GameObject[] powerups;
     public float Deposit_interval;
+    public float score_per_extract;
+    public float full_extraction_score;
     public int extraction_rate_miltiplier;
     public float extraction_rate;
     public int max_value;
@@ -39,6 +47,18 @@ public class ExtractionPoint : MonoBehaviour
     void Update()
     {
 
+        Debug.Log(current_value);
+        if (active_time > 0)
+        {
+            active_time -= Time.deltaTime;
+            if (active_time <= 0)
+            {
+
+                Destroy(gameObject);
+            }
+
+        }
+
 
 
         if (CanExtract == true )
@@ -56,7 +76,7 @@ public class ExtractionPoint : MonoBehaviour
         }
         
       
-        Debug.Log("Extraction Site value =" + current_value);
+        
        
         
     }
@@ -67,8 +87,9 @@ public class ExtractionPoint : MonoBehaviour
 
             
         {
-
+            
             CanExtract = true;
+            
 
             
 
@@ -91,6 +112,7 @@ public class ExtractionPoint : MonoBehaviour
         }
     }
 
+    
     public void deposit()
     {   collectable_points = max_value - current_value;
         if (current_value < max_value && max_value >= deposit_limit_max)
@@ -104,8 +126,10 @@ public class ExtractionPoint : MonoBehaviour
                     
                         if(PlayerInventory.instance.CollectedCoins > 0)
                         {
-                        PlayerInventory.instance.CollectedCoins -= 1 * extraction_rate_miltiplier;
-                        current_value += 1 * extraction_rate_miltiplier;
+
+                         GameManager.instance.addscore(score_per_extract);
+                         PlayerInventory.instance.CollectedCoins -= 1 * extraction_rate_miltiplier;
+                         current_value += 1 * extraction_rate_miltiplier;
 
                             
                         }
@@ -115,6 +139,23 @@ public class ExtractionPoint : MonoBehaviour
 
                 }
             }
-        }   
+        }
+
+        if (current_value == max_value)
+        {
+            GameManager.instance.addscore(full_extraction_score);
+            Instantiate(powerups[Random.Range(0, powerups.Length)], transform.position, transform.rotation);
+            GameManager.instance.ExtractedNum += 1;
+            Destroy(gameObject);
+
+        }
+    }
+
+    private void OnDestroy()
+    {
+        GetComponentInChildren<ExtractionUI>().disabletxt();
+        //GetComponentInChildren<ExtractionUI>().disablebar();
+
+        GameManager.instance.updateNumber();
     }
 }
