@@ -37,7 +37,13 @@ public enum Direction
 }
 public enum collectables
 {
-    coin,powerup
+    coin
+}
+
+public enum PowerUps
+{
+    speed_powerup,Magic_block,health_pickup
+
 }
 
 public enum TileID

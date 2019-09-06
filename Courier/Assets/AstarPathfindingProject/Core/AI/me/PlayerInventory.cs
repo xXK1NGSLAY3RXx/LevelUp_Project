@@ -5,6 +5,22 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public static PlayerInventory instance;
+
+    private GameObject collected_powerup;
+    public GameObject CollectedPowerup
+    {
+        get
+        {
+            return collected_powerup;
+        }
+
+        set
+        {
+            collected_powerup = value;
+        }
+
+    }
+    
     private int collected_coins;
     //use this in other scripts PlayerInventory.instance.collectedCoins
     public int CollectedCoins
@@ -43,5 +59,15 @@ public class PlayerInventory : MonoBehaviour
     public void coinloss(int Value)
     {
         CollectedCoins -= Value;
+    }
+
+    public void UsingPowerup()
+    {
+        if (collected_powerup != null)
+        {
+            Instantiate(collected_powerup, new Vector3(PlayerMove.Player_Move.PlayerPosX, PlayerMove.Player_Move.PlayerPosY, 0),transform.rotation);
+            AstarPath.active.Scan();
+            collected_powerup = null;
+        }
     }
 }

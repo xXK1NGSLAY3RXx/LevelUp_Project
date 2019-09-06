@@ -3,11 +3,37 @@
 public class CharacterStats : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int MaxHealth = 3;
-    public int CurrentHealth { get; private set; }
+    public int MaxHealth;
+    public int starting_health;
+    private int current_health;
+    public int CurrentHealth
+    {
+        get
+        {
+            return current_health;
+        }
 
-    public float MaxSpeed = 5;
-    public float CurrentSpeed { get; private set; }
+        set
+        {
+           current_health = value;
+        }
+    }
+
+    public float MaxSpeed ;
+    public float starting_speed;
+    private float current_speed;
+    public float CurrentSpeed
+    {
+        get
+        {
+            return current_speed;
+        }
+
+        set
+        {
+            current_speed = value;
+        }
+    }
 
 
 
@@ -16,8 +42,8 @@ public class CharacterStats : MonoBehaviour
     private void Awake()
     {
 
-        CurrentHealth = MaxHealth;
-        CurrentSpeed = MaxSpeed;
+        CurrentHealth = starting_health;
+        CurrentSpeed = starting_speed;
     }
 
     private void Update()
@@ -27,6 +53,10 @@ public class CharacterStats : MonoBehaviour
 
 
     }
+
+
+
+
 
     public void takedamage(int damage)
     {
