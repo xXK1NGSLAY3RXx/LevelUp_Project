@@ -51,7 +51,7 @@ public class ThiefEnemy : MonoBehaviour
     }
     public void Steal()
     {
-        if(empty_bag && PlayerInventory.instance.CollectedCoins > stealing_amount)
+        if(empty_bag && PlayerInventory.instance.CollectedCoins > stealing_amount && FindObjectOfType<PlayerStats>().Current_state == PlayerStats.States.normal )
         {
             BagAmount += stealing_amount;
             PlayerInventory.instance.coinloss(stealing_amount);

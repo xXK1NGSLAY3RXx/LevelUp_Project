@@ -19,6 +19,7 @@ namespace Pathfinding
     {
         /// <summary>The object that the AI should move to</summary>
 
+        public bool IsExtractionpoint;
         public float scatterTimer;    
         public float startChaseTimer;
         public float chaseTimer;
@@ -39,29 +40,55 @@ namespace Pathfinding
 
         void MoveToWaypoint()
         {
-
-            if (targets.Length == 0) return;
-
-            bool search = false;
-
-            // Check if the agent has reached the current target.
-            // We must check for 'pathPending' because otherwise we might
-            // detect that the agent has reached the *previous* target
-            // because the new path has not been calculated yet.
-            if (agent.reachedEndOfPath && !agent.pathPending)
+            if (IsExtractionpoint != true)
             {
-                index = index + 1;
-                search = true;
+                if (targets.Length == 0) return;
+
+                bool search = false;
+
+                // Check if the agent has reached the current target.
+                // We must check for 'pathPending' because otherwise we might
+                // detect that the agent has reached the *previous* target
+                // because the new path has not been calculated yet.
+                if (agent.reachedEndOfPath && !agent.pathPending)
+                {
+                    index = index + 1;
+                    search = true;
+                }
+
+                // Wrap around to the start of the targets array if we have reached the end of it
+                index = index % targets.Length;
+                target = targets[index];
+                agent.destination = target.position;
+
+                // Immediately calculate a path to the target.
+                // Note that this needs to be done after setting the destination.
+                if (search) agent.SearchPath();
+
             }
+            else
+            {
+                bool search = false;
 
-            // Wrap around to the start of the targets array if we have reached the end of it
-            index = index % targets.Length;
-            target = targets[index];
-            agent.destination = target.position;
+                // Check if the agent has reached the current target.
+                // We must check for 'pathPending' because otherwise we might
+                // detect that the agent has reached the *previous* target
+                // because the new path has not been calculated yet.
+                if (agent.reachedEndOfPath && !agent.pathPending)
+                {
+                    index = index + 1;
+                    search = true;
+                }
 
-            // Immediately calculate a path to the target.
-            // Note that this needs to be done after setting the destination.
-            if (search) agent.SearchPath();
+                // Wrap around to the start of the targets array if we have reached the end of it
+                
+                target = GameObject.FindGameObjectsWithTag("ExtractionSitetarget")[Random.Range(0, 3)].transform; 
+                agent.destination = target.position;
+
+                // Immediately calculate a path to the target.
+                // Note that this needs to be done after setting the destination.
+                if (search) agent.SearchPath();
+            }
         }
 
         void MoveToPlayer()

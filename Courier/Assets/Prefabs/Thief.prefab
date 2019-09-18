@@ -95,8 +95,8 @@ GameObject:
   - component: {fileID: 5149392289647966428}
   - component: {fileID: 8198703823559316093}
   m_Layer: 0
-  m_Name: AI
-  m_TagString: Untagged
+  m_Name: Thief
+  m_TagString: ThiefEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,12 +160,12 @@ MonoBehaviour:
   repathRate: Infinity
   canSearch: 1
   canMove: 1
-  speed: 4
+  speed: 3
   orientation: 1
   enableRotation: 1
-  rotationSpeed: 30
+  rotationSpeed: 20
   interpolatePathSwitches: 1
-  switchPathInterpolationSpeed: 10
+  switchPathInterpolationSpeed: 7
   targetCompatibility: {fileID: 0}
 --- !u!114 &9002163959329499805
 MonoBehaviour:
@@ -180,6 +180,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
+  IsExtractionpoint: 0
+  scatterTimer: 0
+  startChaseTimer: 0
+  chaseTimer: 0
   player: {fileID: 0}
   target: {fileID: 0}
   playerP: {fileID: 0}

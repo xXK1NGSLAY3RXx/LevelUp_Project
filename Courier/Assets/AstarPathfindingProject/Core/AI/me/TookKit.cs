@@ -42,7 +42,7 @@ public enum collectables
 
 public enum PowerUps
 {
-    speed_powerup,Magic_block,health_pickup
+    speed_powerup,Magic_block,health_pickup,fire_bug
 
 }
 

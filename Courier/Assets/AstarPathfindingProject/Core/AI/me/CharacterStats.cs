@@ -3,6 +3,21 @@
 public class CharacterStats : MonoBehaviour
 {
     // Start is called before the first frame update
+   
+    private bool died;
+    public bool Died
+    {
+        get
+        {
+            return died;
+        }
+
+        set
+        {
+           died = value;
+        }
+
+    }
     public int MaxHealth;
     public int starting_health;
     private int current_health;
@@ -41,6 +56,7 @@ public class CharacterStats : MonoBehaviour
 
     private void Awake()
     {
+       
 
         CurrentHealth = starting_health;
         CurrentSpeed = starting_speed;
@@ -48,30 +64,19 @@ public class CharacterStats : MonoBehaviour
 
     private void Update()
     {
-        
-      
+        //execute(Current_state);
+
+        //if (CurrentHealth <= 0)
+        //{
+        //    die();
+        //}
 
 
     }
+       
 
 
 
 
 
-    public void takedamage(int damage)
-    {
-        CurrentHealth -= damage;
-
-        if (CurrentHealth <= 0)
-        {
-            die();
-        }
-
-   
-    }
-
-    public void die()
-    {
-        Debug.Log(transform.name + "Died");
-    }
 }

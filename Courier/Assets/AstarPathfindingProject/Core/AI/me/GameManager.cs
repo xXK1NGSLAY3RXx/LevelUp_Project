@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Text win_text;
+    public Text lose_text;
 
     public GameObject[] available_tiles;
 
@@ -40,6 +41,8 @@ public class GameManager : MonoBehaviour
     private GameObject[] spawned_extractionsites;
 
     public GameObject[] extraction_sites_ToSpawn;
+    public float First_spawn;
+    public float Spawn_interval;
 
     public int Max_extractionsite_count;
 
@@ -68,9 +71,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        available_tiles = GameObject.FindGameObjectsWithTag("Blank");
+        
         updateNumber();
-        InvokeRepeating("SpawnExtractionSite", 5, 10);
+        InvokeRepeating("SpawnExtractionSite", First_spawn, Spawn_interval - First_spawn);
         //InvokeRepeating();
 
     }
@@ -78,6 +81,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PlayerStats.instance.Died == true)
+        {
+            lose();
+        }
+        
         if (winbysurviving == true)
         {
             SurviveTime_towin -= Time.deltaTime;
@@ -109,6 +117,7 @@ public class GameManager : MonoBehaviour
 
     public void SpawnExtractionSite()
     {
+        available_tiles = GameObject.FindGameObjectsWithTag("Blank");
 
         Debug.Log("try");
         if (Max_extractionsite_count > spawned_extractionsites.Length)
@@ -134,8 +143,22 @@ public class GameManager : MonoBehaviour
         win_text.enabled = true;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Hub", LoadSceneMode.Additive);
+            SceneManager.LoadScene(2);
+            Time.timeScale = 1;
         }
         
+    }
+
+   public void lose()
+    {
+        Time.timeScale = 0;
+        lose_text.enabled = true;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(1);
+             Time.timeScale = 1;
+        }
+
+
     }
 }

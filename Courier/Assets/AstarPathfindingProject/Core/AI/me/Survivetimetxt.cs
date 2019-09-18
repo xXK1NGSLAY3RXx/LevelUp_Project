@@ -8,7 +8,10 @@ public class Survivetimetxt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (GameManager.instance.winbysurviving == false)
+        {
+            text.enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -16,8 +19,8 @@ public class Survivetimetxt : MonoBehaviour
     {
         if (GameManager.instance.winbysurviving == true)
         {
-            text.text = "survive = " + GameManager.instance.SurviveTime_towin;
+            text.text = "survive = " + Mathf.Round( GameManager.instance.SurviveTime_towin) + " Seconds";
         }
-
+       
     }
 }

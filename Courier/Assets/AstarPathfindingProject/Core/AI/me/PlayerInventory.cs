@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
     public static PlayerInventory instance;
 
+    public Image Powerupimage;
+    private bool onfire = false;
+    
     private GameObject collected_powerup;
     public GameObject CollectedPowerup
     {
@@ -45,6 +49,7 @@ public class PlayerInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         // Debug.Log(collected_coins);
 
     }
@@ -65,9 +70,13 @@ public class PlayerInventory : MonoBehaviour
     {
         if (collected_powerup != null)
         {
-            Instantiate(collected_powerup, new Vector3(PlayerMove.Player_Move.PlayerPosX, PlayerMove.Player_Move.PlayerPosY, 0),transform.rotation);
-            AstarPath.active.Scan();
-            collected_powerup = null;
+            if (collected_powerup.CompareTag("MagicBlock"))
+            {
+                Instantiate(collected_powerup, new Vector3(PlayerMove.Player_Move.PlayerPosX, PlayerMove.Player_Move.PlayerPosY, 0), transform.rotation);
+                AstarPath.active.Scan();
+                collected_powerup = null;
+            }
+
         }
     }
 }

@@ -305,6 +305,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655bcaa824cbb3b499cf420e3633ab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scatterTimer: 0
+  startChaseTimer: 0
+  chaseTimer: 0
   player: {fileID: 3016036094248089320, guid: 8e9ed6af73059c64f8bc68801d1abb34, type: 3}
   P: {fileID: 0}
   target: {fileID: 0}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

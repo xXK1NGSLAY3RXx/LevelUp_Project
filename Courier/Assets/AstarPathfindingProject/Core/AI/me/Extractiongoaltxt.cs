@@ -9,7 +9,10 @@ public class Extractiongoaltxt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (GameManager.instance.WinByExtractions == false)
+        {
+            text.enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -19,6 +22,7 @@ public class Extractiongoaltxt : MonoBehaviour
         {
             text.text = "Extractions = " + GameManager.instance.ExtractedNum + " / " + GameManager.instance.Extractions_ToWin;
         }
+       
         
     }
 }

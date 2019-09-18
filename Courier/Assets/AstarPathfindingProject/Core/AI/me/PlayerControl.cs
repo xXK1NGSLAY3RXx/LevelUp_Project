@@ -35,6 +35,10 @@ public class PlayerControl : MonoBehaviour
         {
             PlayerInventory.instance.UsingPowerup();
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayerMove.Player_Move.InputDirection = Direction.empty;
+        }
 
 
 

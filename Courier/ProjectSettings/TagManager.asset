@@ -6,6 +6,15 @@ TagManager:
   tags:
   - Block
   - Coin
+  - Extractionsite
+  - PowerUp
+  - Magicblock
+  - Spawner
+  - KillerEnemy
+  - Blank
+  - ThiefEnemy
+  - SpawnerEnemy
+  - ExtractionSitetarget
   layers:
   - Default
   - TransparentFX
