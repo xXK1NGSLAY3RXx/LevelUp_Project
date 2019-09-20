@@ -145,7 +145,7 @@ public class ExtractionPoint : MonoBehaviour
         if (current_value == max_value)
         {
             GameManager.instance.addscore(full_extraction_score);
-            Instantiate(powerups[Random.Range(0, powerups.Length)], transform.position, transform.rotation);
+            Instantiate(powerups[Random.Range(0, powerups.Length)], transform.position, new Quaternion(0, 0, 0, 0));
             GameManager.instance.ExtractedNum += 1;
             Destroy(gameObject);
 

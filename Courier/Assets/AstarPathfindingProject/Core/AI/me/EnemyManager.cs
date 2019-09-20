@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public GameObject EnemyType1;
-    private string EnemyType1_tag;
-    public GameObject EnemyType2;
-    private string EnemyType2_tag;
-    public GameObject EnemyType3;
-    private string EnemyType3_tag;
-    public GameObject EnemyType4;
-    private string EnemyType4_tag;
+    //public GameObject EnemyType1;
+    //private string EnemyType1_tag;
+    //public GameObject EnemyType2;
+    //private string EnemyType2_tag;
+    //public GameObject EnemyType3;
+    //private string EnemyType3_tag;
+    //public GameObject EnemyType4;
+    //private string EnemyType4_tag;
+    public Queue<GameObject> enemies;
     
    
     

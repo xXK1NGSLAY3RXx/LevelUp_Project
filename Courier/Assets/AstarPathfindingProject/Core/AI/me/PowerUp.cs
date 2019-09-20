@@ -10,7 +10,7 @@ public class PowerUp : MonoBehaviour
     public float bonus_speed;
     public float active_time;
 
-    private float timer;
+ 
     
 
     public bool magic_block;
@@ -22,6 +22,8 @@ public class PowerUp : MonoBehaviour
 
     public bool health_Pickup;
     public int bonus_hp;
+    private Collider2D collider_;
+    private float timer = 1f;
 
     
 
@@ -31,12 +33,20 @@ public class PowerUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        collider_ = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (timer > 0 && collider_.enabled != true)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                collider_.enabled = true;
+            }
+        }
  
 
     }

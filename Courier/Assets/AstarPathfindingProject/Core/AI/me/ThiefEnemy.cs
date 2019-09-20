@@ -8,6 +8,7 @@ public class ThiefEnemy : MonoBehaviour
     public static ThiefEnemy instance;
     public int max_bag_amount;
     public int stealing_amount;
+    public GameObject bag;
     private bool empty_bag;
     private int bag_amount;
     
@@ -57,7 +58,7 @@ public class ThiefEnemy : MonoBehaviour
 
             BagAmount += stealing_amount;
             PlayerInventory.instance.coinloss(stealing_amount);
-            Stolenpointstxt.instance.enabletxt(stealing_amount);
+            Stolenpointstxt.instance.enableStolentxt(stealing_amount);
             
             
             
@@ -65,6 +66,16 @@ public class ThiefEnemy : MonoBehaviour
             
 
         
+    }
+    private void OnDestroy()
+    {
+        if (empty_bag != true)
+        {
+            GameObject fallenbag = Instantiate(bag, transform.position, new Quaternion(0, 0, 0, 0));
+
+            fallenbag.GetComponent<BagScript>().FillTheBag(BagAmount);
+        }
+       
     }
 
 }

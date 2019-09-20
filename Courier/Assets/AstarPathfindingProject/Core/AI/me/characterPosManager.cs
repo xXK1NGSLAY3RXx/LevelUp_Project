@@ -15,7 +15,7 @@ public class characterPosManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       char_extra_pos = (float)PlayerInventory.instance.CollectedCoins / 200f;
+       char_extra_pos = (float)PlayerInventory.instance.CollectedCoins / 300f;
         updatepos();
     }
 

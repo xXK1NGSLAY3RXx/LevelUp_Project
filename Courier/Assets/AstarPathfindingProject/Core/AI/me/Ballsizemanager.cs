@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ballsizemanager : MonoBehaviour
 {
     public static Ballsizemanager instance;
-    [Range(1, 2)]
+    
     private float ball_extra_size;
     private Vector3 scale;
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class Ballsizemanager : MonoBehaviour
     {
        
         Debug.Log( scale.x);
-        ball_extra_size = 1 + (float)PlayerInventory.instance.CollectedCoins / 100f;
+        ball_extra_size = Mathf.Clamp( 1 + (float)PlayerInventory.instance.CollectedCoins / 150f,1,2);
         updatescale();
        
     }

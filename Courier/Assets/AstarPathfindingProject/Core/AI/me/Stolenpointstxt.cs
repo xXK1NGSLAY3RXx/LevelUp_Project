@@ -27,11 +27,21 @@ public class Stolenpointstxt : MonoBehaviour
         }
     }
 
-    public void enabletxt(int amount)
+    public void enableStolentxt(int amount)
     {
-        
+        text.color = Color.red;
         text.text = "- " + amount;
         text.enabled = true;
         timer = 3;
     }
+
+    public void enableTakentxt(int amount)
+    {
+        text.color = Color.green;
+        text.text = "+ " + amount;
+        text.enabled = true;
+        timer = 3;
+    }
+
 }
+
