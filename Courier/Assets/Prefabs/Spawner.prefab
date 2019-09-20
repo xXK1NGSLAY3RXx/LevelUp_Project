@@ -95,6 +95,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 4920445267517237398, guid: a14e4942d212cc84ab992426cc3eb195, type: 3}
+  o1: {fileID: 3016036094248089320, guid: 8e9ed6af73059c64f8bc68801d1abb34, type: 3}
+  distanceTarget: 10
+  timer: 5
 --- !u!61 &8523327472405206578
 BoxCollider2D:
   m_ObjectHideFlags: 0

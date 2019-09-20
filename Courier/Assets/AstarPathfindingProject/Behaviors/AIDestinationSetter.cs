@@ -29,6 +29,9 @@ namespace Pathfinding
         public Transform playerP;
         public Transform[] targets;
         int index;
+        float t = 0.0f;
+        public float timerChase;
+        public float timerScatter;
 
         IAstarAI agent;
 
@@ -113,16 +116,29 @@ namespace Pathfinding
             if (search) agent.SearchPath();
         }
 
-
+        public void tt()
+        {
+            t += Time.deltaTime;
+            if (Mathf.Abs(t - timerChase) < 0.2f)
+            {
+                SwitchToChaseState();
+                
+            }
+            else if(Mathf.Abs(t - timerScatter) < 0.2f)
+            {
+                SwitchToScatterState();
+                t = 0.0f;
+            }
+        }
 
 
         void Start()
         {
-            InvokeRepeating("SwitchToScatterState", 0.0f, scatterTimer);
-            InvokeRepeating("SwitchToChaseState", startChaseTimer, chaseTimer);
+            //InvokeRepeating("SwitchToScatterState", 0.0f, scatterTimer);
+            //InvokeRepeating("SwitchToChaseState", startChaseTimer, chaseTimer);
 
             // _rigidbody2D = GetComponent<Rigidbody2D>();
-            //_state = State.scatter;
+            _state = State.scatter;
 
         }
 
@@ -151,7 +167,7 @@ namespace Pathfinding
 
         void FixedUpdate()
         {
-
+            tt();
 
             switch (_state)
             {

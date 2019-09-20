@@ -8,11 +8,11 @@ namespace Pathfinding
     {
         /// <summary>The object that the AI should move to</summary>
 
-        public float scatterTimer;
+        //public float scatterTimer;
         //public float startChaseTimer;
        // public float chaseTimer;
-        public float startSpawnTimer;
-        public float spawnTimer;
+        //public float startSpawnTimer;
+        //public float spawnTimer;
 
         public GameObject player;
         public GameObject spawner;
@@ -20,14 +20,25 @@ namespace Pathfinding
         public Transform playerP;
         public Transform[] targets;
         int index;
-
+        float t = 0.0f;
+        public float timer;
         IAstarAI agent;
-
+	
         void Awake()
         {
             agent = GetComponent<IAstarAI>();
         }
 
+
+        public void tt()
+        {
+            t += Time.deltaTime;
+            if (t - timer > 0.2f)
+            {
+                SpawnEnemy();
+                t = 0;
+            }
+        }
 
         void SpawnEnemy()
         {
@@ -61,6 +72,7 @@ namespace Pathfinding
             if (search) agent.SearchPath();
         }
 
+
         void MoveToPlayer()
         {
 
@@ -88,12 +100,12 @@ namespace Pathfinding
 
         void Start()
         {
-            InvokeRepeating("SwitchToScatterState", 0.0f, scatterTimer);
+            //InvokeRepeating("SwitchToScatterState", 0.0f, scatterTimer);
             //InvokeRepeating("SwitchToChaseState", startChaseTimer, chaseTimer);
-            InvokeRepeating("SpawnEnemy", startSpawnTimer, spawnTimer);
+           // InvokeRepeating("SpawnEnemy", startSpawnTimer, spawnTimer);
 
             // _rigidbody2D = GetComponent<Rigidbody2D>();
-            //_state = State.scatter;
+            _state = State.scatter;
 
         }
 
@@ -129,7 +141,7 @@ namespace Pathfinding
         void FixedUpdate()
         {
 
-
+            tt();
             switch (_state)
             {
                 case State.scatter:
