@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1300089297808081885
 Transform:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 1300089298345113674}
   - component: {fileID: 1300089298345113673}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,8 +147,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.6009795, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1d6fa0ffefb30bc4cb65a5e2da274378, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -172,13 +172,15 @@ GameObject:
   - component: {fileID: 7311173939967354336}
   - component: {fileID: 2995620776351660965}
   - component: {fileID: 2089254650499846754}
+  - component: {fileID: 1443709303}
+  - component: {fileID: 1443709302}
   m_Layer: 0
   m_Name: KillerEnemy
   m_TagString: KillerEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1300089299148663269
 Transform:
   m_ObjectHideFlags: 0
@@ -280,7 +282,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.015956879, y: 0.15148973}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -291,7 +293,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7766037, y: 0.6013422}
   m_EdgeRadius: 0
 --- !u!114 &2089254650499846754
 MonoBehaviour:
@@ -305,9 +307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655bcaa824cbb3b499cf420e3633ab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scatterTimer: 0
-  startChaseTimer: 0
-  chaseTimer: 0
+  scatterTimer: 10
+  startChaseTimer: 10
+  chaseTimer: 20
   player: {fileID: 3016036094248089320, guid: 8e9ed6af73059c64f8bc68801d1abb34, type: 3}
   P: {fileID: 0}
   target: {fileID: 0}
@@ -317,3 +319,37 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!95 &1443709303
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300089299148663288}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: db8ad1849b24d3c4296ec7dfb524ba37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1443709302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300089299148663288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f24ac0f4649424180126c18e77d9a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starting_health: 1
+  SpawnPoint: {fileID: 0}
+  bloodstain: {fileID: 0}

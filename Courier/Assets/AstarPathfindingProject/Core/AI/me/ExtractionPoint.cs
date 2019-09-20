@@ -47,7 +47,7 @@ public class ExtractionPoint : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(current_value);
+        //Debug.Log(current_value);
         if (active_time > 0)
         {
             active_time -= Time.deltaTime;
@@ -127,11 +127,12 @@ public class ExtractionPoint : MonoBehaviour
                         if(PlayerInventory.instance.CollectedCoins > 0)
                         {
 
-                         GameManager.instance.addscore(score_per_extract);
-                         PlayerInventory.instance.CollectedCoins -= 1 * extraction_rate_miltiplier;
-                         current_value += 1 * extraction_rate_miltiplier;
+                          GameManager.instance.addscore(score_per_extract);
+                          PlayerInventory.instance.CollectedCoins -= 1 * extraction_rate_miltiplier;
+                          current_value += 1 * extraction_rate_miltiplier;
+                         
 
-                            
+
                         }
 
                     

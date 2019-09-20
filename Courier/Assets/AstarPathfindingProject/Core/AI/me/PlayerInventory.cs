@@ -7,8 +7,8 @@ public class PlayerInventory : MonoBehaviour
 {
     public static PlayerInventory instance;
 
-    public Image Powerupimage;
-    private bool onfire = false;
+    
+   
     
     private GameObject collected_powerup;
     public GameObject CollectedPowerup
@@ -53,29 +53,31 @@ public class PlayerInventory : MonoBehaviour
         // Debug.Log(collected_coins);
 
     }
-    public void collecting(collectables item)
+    public void collecting(collectables item ,int amount)
     {
         if (item == collectables.coin)
         {
-            CollectedCoins += 1;
+            CollectedCoins += amount;
+           
         }
     }
 
     public void coinloss(int Value)
     {
         CollectedCoins -= Value;
+      
     }
 
     public void UsingPowerup()
     {
         if (collected_powerup != null)
         {
-            if (collected_powerup.CompareTag("MagicBlock"))
-            {
+          
+         
                 Instantiate(collected_powerup, new Vector3(PlayerMove.Player_Move.PlayerPosX, PlayerMove.Player_Move.PlayerPosY, 0), transform.rotation);
                 AstarPath.active.Scan();
                 collected_powerup = null;
-            }
+            
 
         }
     }

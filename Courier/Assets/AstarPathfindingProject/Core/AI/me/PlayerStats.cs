@@ -8,6 +8,7 @@ public class PlayerStats : CharacterStats
 
     private float State_active_time;
     public float safe_time;
+    public SpriteRenderer firesprite;
 
     private int onfireState_damage_amount = 1;
     public float onfireState_takingdamage_interval;
@@ -52,7 +53,8 @@ public class PlayerStats : CharacterStats
     {
         instance = this;
         Current_state = States.normal;
-
+        
+            
     }
 
     // Update is called once per frame
@@ -60,7 +62,7 @@ public class PlayerStats : CharacterStats
     {
         execute(Current_state);
 
-        Debug.Log(Current_state);
+        //Debug.Log(Current_state);
 
        
     }
@@ -142,7 +144,7 @@ public class PlayerStats : CharacterStats
 
         if (State == States.normal)
         {
-
+            firesprite.enabled = false;
         }
         else if (State == States.invulnerable)
         {
@@ -173,7 +175,7 @@ public class PlayerStats : CharacterStats
     {
         if (State == States.normal)
         {
-
+           
         }
         else if (State == States.invulnerable)
         {
@@ -195,6 +197,7 @@ public class PlayerStats : CharacterStats
 
             if (State_active_time > 0)
             {
+                firesprite.enabled = true;
                  State_active_time -= Time.deltaTime;
                 if (onfireState_takingdamage_interval > 0)
                 {
@@ -210,6 +213,7 @@ public class PlayerStats : CharacterStats
 
             if (State_active_time <= 0)
             {
+                
                 SwitchState(States.normal, 0);
             }
 

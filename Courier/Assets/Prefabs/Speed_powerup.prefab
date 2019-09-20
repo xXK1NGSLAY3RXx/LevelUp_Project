@@ -51,8 +51,8 @@ MonoBehaviour:
   active_time: 5
   magic_block: 0
   MagicBlock_prefab: {fileID: 0}
-  slow_block: 0
-  SlowBlock_prefab: {fileID: 0}
+  Fire_bug: 0
+  FireBug_duration: 0
   health_Pickup: 0
   bonus_hp: 1
 --- !u!61 &2301521636312410420
@@ -72,7 +72,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7425, y: 1.28}
+    oldSize: {x: 20.48, y: 20.48}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -139,7 +139,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3020fc3b49118ca429c69462b8701eaf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 463e0758ad0eaa14bbc862dadc71369c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

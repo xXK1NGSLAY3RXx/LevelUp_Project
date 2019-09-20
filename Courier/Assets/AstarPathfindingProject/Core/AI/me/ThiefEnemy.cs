@@ -9,18 +9,18 @@ public class ThiefEnemy : MonoBehaviour
     public int max_bag_amount;
     public int stealing_amount;
     private bool empty_bag;
-    private int bag_value;
+    private int bag_amount;
     
     public int BagAmount
     {
         get
         {
-            return bag_value;
+            return bag_amount;
         }
 
         set
         {
-            bag_value = value;
+            bag_amount = value;
         }
     }
 
@@ -33,7 +33,8 @@ public class ThiefEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bag_value <= 0)
+        Debug.Log(BagAmount);
+        if (bag_amount <= 0)
         {
             empty_bag = true;
         }
@@ -51,10 +52,13 @@ public class ThiefEnemy : MonoBehaviour
     }
     public void Steal()
     {
-        if(empty_bag && PlayerInventory.instance.CollectedCoins > stealing_amount && FindObjectOfType<PlayerStats>().Current_state == PlayerStats.States.normal )
+        if(BagAmount < max_bag_amount  && PlayerInventory.instance.CollectedCoins > stealing_amount && FindObjectOfType<PlayerStats>().Current_state == PlayerStats.States.normal )
         {
+
             BagAmount += stealing_amount;
             PlayerInventory.instance.coinloss(stealing_amount);
+            Stolenpointstxt.instance.enabletxt(stealing_amount);
+            
             
             
         }

@@ -11,7 +11,7 @@ public class Coin : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             
-            PlayerInventory.instance.collecting(collectables.coin);
+            PlayerInventory.instance.collecting(collectables.coin,1);
             coindestroy();
             
             

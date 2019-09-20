@@ -100,7 +100,9 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(FaceDirection);
+        currenttile = MapManager.instance.tile;
+        Vector3 playerpos = transform.position;
+        //Debug.Log(FaceDirection);
         DirectionHandle();
         
 
@@ -138,7 +140,7 @@ public class PlayerMove : MonoBehaviour
             if (currenttile[playerpos_x, playerpos_y].CompareTag("Blank"))
             {
 
-                if (currenttile[playerpos_x + i_X, playerpos_y + i_Y].CompareTag("Blank"))
+                if (currenttile[playerpos_x + i_X, playerpos_y + i_Y].CompareTag("Blank") && (Mathf.Abs (playerpos.x - currenttile[playerpos_x , playerpos_y ].transform.position.x) < 0.1f && Mathf.Abs(playerpos.y - currenttile[playerpos_x, playerpos_y].transform.position.y) < 0.1f))
                 {
                     
                     face_direction = InputDirection;
@@ -274,7 +276,7 @@ public class PlayerMove : MonoBehaviour
 
     public void Stop()
     {
-        Debug.Log("stop");
+
         face_direction = Direction.empty;
     }
 }

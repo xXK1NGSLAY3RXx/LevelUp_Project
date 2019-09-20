@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -119,7 +120,7 @@ public class GameManager : MonoBehaviour
     {
         available_tiles = GameObject.FindGameObjectsWithTag("Blank");
 
-        Debug.Log("try");
+       
         if (Max_extractionsite_count > spawned_extractionsites.Length)
         {
             Instantiate(extraction_sites_ToSpawn[Random.Range(0, extraction_sites_ToSpawn.Length)], available_tiles[Random.Range(0, available_tiles.Length)].transform.position, transform.rotation);
@@ -155,8 +156,11 @@ public class GameManager : MonoBehaviour
         lose_text.enabled = true;
         if (Input.GetKeyDown(KeyCode.Space))
         {
+          
+
             SceneManager.LoadScene(1);
-             Time.timeScale = 1;
+            Time.timeScale = 1;
+             
         }
 
 
